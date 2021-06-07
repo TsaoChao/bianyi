@@ -6,7 +6,7 @@
 
 %token DOT		// .
 %token PROGRAM
-%token ID		// 函数名 变量名
+%token ID		// 变量、函数名
 %token SEMI		// ;
 %token CONST
 %token NAME		// 常数名 类型
@@ -64,3 +64,37 @@
 %token NOT
 %token LABEL
 %%
+%nonassoc TK_IF TK_ELSE
+%token TK_INT TK_CHAR TK_FLOAT TK_DOUBLE TK_LONG TK_SHORT TK_SIGNED TK_UNSIGNED TK_VOID
+%token TK_RETURN
+%token TK_WHILE TK_FOR
+%token TK_BREAK
+%token ENDIF
+                      
+%token TK_ID
+%token TK_SC TK_CMA TK_LRB TK_LCB TK_RCB TK_LSB TK_RSB
+%nonassoc TK_RRB
+
+%token integer_constant string_constant float_constant character_constant
+
+%right leftshift_assignment_operator rightshift_assignment_operator
+%right XOR_assignment_operator OR_assignment_operator
+%right AND_assignment_operator modulo_assignment_operator
+%right multiplication_assignment_operator division_assignment_operator
+%right addition_assignment_operator subtraction_assignment_operator
+%right assignment_operator
+
+%left OR_operator
+%left AND_operator
+%left pipe_operator
+%left caret_operator
+%left amp_operator
+%left equality_operator inequality_operator
+%left lessthan_assignment_operator lessthan_operator greaterthan_assignment_operator greaterthan_operator
+%left leftshift_operator rightshift_operator 
+%left add_operator subtract_operator
+%left multiplication_operator division_operator modulo_operator
+
+%right SIZEOF
+%right tilde_operator exclamation_operator
+%left increment_operator decrement_operator 
