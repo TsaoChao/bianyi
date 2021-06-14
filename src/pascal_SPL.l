@@ -11,7 +11,7 @@ sys_funct  "abs"|"chr"|"odd"|"ord"|"pred"|"sqr"|"sqrt"|"succ"
 sys_proc   "write"|"writeln" 
 sys_con    "false"|"maxint"|"true" 
 Identifier [a-zA-Z_][a-zA-Z0-9_]*
-DECIMAL_REAL [0-9]+\.[0-9]+ {DECIMAL_INT}
+DECIMAL_REAL [0-9]+\.[0-9]+
 space	     [ \t\r]+
 
 %%
